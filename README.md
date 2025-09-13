@@ -3,7 +3,7 @@ This repository contains the Verilog source code for a high-performance, paramet
 
 A self-checking testbench is included to verify the filter's functional correctness against a behavioral golden reference model.
 
-Features
+# Features
 Parameterizable: Easily change the number of taps (TAPS), data width (DATA_WIDTH), and coefficient width (COEFF_WIDTH).
 
 High-Throughput Architecture: A fully parallel and deeply pipelined design allows for a new output to be produced on every clock cycle after the initial latency.
@@ -14,7 +14,7 @@ Synthesizable RTL: The filter is written in synthesizable Verilog, suitable for 
 
 Self-Checking Verification: The included testbench automatically verifies the hardware's output against a known-good behavioral model, reporting any mismatches.
 
-Architecture Overview
+# Architecture Overview
 The filter implements the standard FIR convolution sum:
 y(n) = Σ [w(k) * x(n-k)] for k = 0 to N-1
 
@@ -27,14 +27,6 @@ Parallel Multiplier Stage (1 Cycle Latency): N hardware multipliers operate in p
 Pipelined Adder Tree (log2(N) Cycles Latency): A tree of adders sums the results from the multiplier stage. Each level of the tree is registered, creating a deep pipeline that avoids a single, long combinational adder chain.
 
 The total latency of the filter is (2 + log2(TAPS)) clock cycles.
-
-File Structure
-
-├── README.md
-├── rtl
-│   └── fir_filter.v      // Synthesizable FIR Filter Source Code
-└── sim
-    └── tb_fir_filter.v   // Verilog Testbench for Simulation
 
 # Simulation and Verification
 The project can be simulated using any standard Verilog simulator (e.g., ModelSim, Vivado Simulator, Icarus Verilog). The testbench (tb_fir_filter.v) will:
@@ -51,7 +43,6 @@ Instantiate the filter.
 5) Compare the results on every clock cycle and report SUCCESS or ERROR.
 
 
-Running with Icarus Verilog (Example)
 # Compile the Verilog files
 
 iverilog -o tb_fir rtl/fir_filter.v sim/tb_fir_filter.v
