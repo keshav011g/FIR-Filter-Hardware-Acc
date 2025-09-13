@@ -36,20 +36,19 @@ File Structure
 └── sim
     └── tb_fir_filter.v   // Verilog Testbench for Simulation
 
-Simulation and Verification
+# Simulation and Verification
 The project can be simulated using any standard Verilog simulator (e.g., ModelSim, Vivado Simulator, Icarus Verilog). The testbench (tb_fir_filter.v) will:
-
 Instantiate the filter.
 
-Generate a clock and reset signal.
+1) Generate a clock and reset signal.
 
-Provide an impulse stimulus to the filter's input.
+2) Provide an impulse stimulus to the filter's input.
 
-Calculate the expected output using a behavioral "golden" model.
+3) Calculate the expected output using a behavioral "golden" model.
 
-Align the DUT's output with the golden model's output by accounting for the pipeline latency.
+4) Align the DUT's output with the golden model's output by accounting for the pipeline latency.
 
-Compare the results on every clock cycle and report SUCCESS or ERROR.
+5) Compare the results on every clock cycle and report SUCCESS or ERROR.
 
 
 Running with Icarus Verilog (Example)
