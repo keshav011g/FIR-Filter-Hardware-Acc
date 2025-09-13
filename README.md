@@ -29,7 +29,7 @@ Pipelined Adder Tree (log2(N) Cycles Latency): A tree of adders sums the results
 The total latency of the filter is (2 + log2(TAPS)) clock cycles.
 
 File Structure
-.
+
 ├── README.md
 ├── rtl
 │   └── fir_filter.v      // Synthesizable FIR Filter Source Code
