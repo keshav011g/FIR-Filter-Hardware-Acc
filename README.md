@@ -1,4 +1,4 @@
-Parameterizable Pipelined FIR Filter in Verilog
+**Parameterizable Pipelined FIR Filter in Verilog**
 This repository contains the Verilog source code for a high-performance, parameterizable, N-tap Finite Impulse Response (FIR) filter. The design is deeply pipelined to maximize clock frequency and data throughput, making it suitable for hardware acceleration in high-speed digital signal processing (DSP) applications.
 
 A self-checking testbench is included to verify the filter's functional correctness against a behavioral golden reference model.
@@ -51,8 +51,10 @@ Align the DUT's output with the golden model's output by accounting for the pipe
 
 Compare the results on every clock cycle and report SUCCESS or ERROR.
 
+
 Running with Icarus Verilog (Example)
 # Compile the Verilog files
+
 iverilog -o tb_fir rtl/fir_filter.v sim/tb_fir_filter.v
 
 # Run the simulation
